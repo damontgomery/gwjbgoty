@@ -18,7 +18,10 @@ data.each do |username, top10|
     points = 10 - index
 
     # Create a record for the game if it's the first time seeing it.
-    sums[game] = {'points' => 0, 'top' => 0} if !sums.key?(game)
+    sums[game] = {'points' => 0, 'top' => 0, 'votes' => 0} if !sums.key?(game)
+
+    # Count the number of votes.
+    sums[game]['votes'] += 1
 
     # Add the points to the running total.
     sums[game]['points'] += points
@@ -28,18 +31,30 @@ data.each do |username, top10|
   end
 end
 
+# Calculate the average.
+sums.each do |game, info|
+  # Multiply by 1.0 to make it a decimal.
+  info['avg'] = 1.0 * (info['points'] / info['votes'])
+end
+
 output = {}
 
 # Sort by points.
-output['points'] = sums.sort_by do |game, info|
-  # Reverse the sort order.
-  -info['points']
-end
+output['points'] = sums.sort_by {|game, info| -info['points']}
+output['points'] = output['points'][0..12]
 
 # Sort by first place votes.
-output['top'] = sums.sort_by do |game, info|
-  -info['top']
-end
+output['top'] = sums.sort_by {|game, info| -info['top']}
+output['top'] = output['top'][0..7]
+
+# Sort by votes.
+output['votes'] = sums.sort_by {|game, info| -info['votes']}
+output['votes'] = output['votes'][0..7]
+
+# Sort by average with at least 3 votes.
+sumsMinThreeVotes = sums.select{|key, item| item['votes'] >= 3}
+output['avg'] = sumsMinThreeVotes.sort_by {|game, info| -info['avg']}
+output['avg'] = output['avg'][0..7]
 
 # Output the file.
-puts JSON.generate(output)
+puts JSON.pretty_generate(output)

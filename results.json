@@ -1,1 +1,298 @@
-{"points":[["Coup",{"points":20,"top":2}],["Bang! The Dice Game",{"points":13,"top":0}],["Sushi Go",{"points":12,"top":0}],["Terra Mystica",{"points":10,"top":1}],["7 Wonders",{"points":9,"top":0}],["Liar's Dice",{"points":9,"top":0}],["Thunder Alley",{"points":9,"top":0}],["Star Wars: X-Wing Miniatures Game",{"points":8,"top":0}],["Om Nom Nom",{"points":7,"top":0}],["Lords of Waterdeep",{"points":7,"top":0}],["Tokaido",{"points":7,"top":0}],["1775: Rebellion",{"points":6,"top":0}],["Space Cadet: Dice Duel",{"points":6,"top":0}],["Takenoko",{"points":6,"top":0}],["Dungeon Petz",{"points":5,"top":0}],["Jamaica",{"points":5,"top":0}],["Russian Railroads",{"points":4,"top":0}],["Shadow Hunters",{"points":3,"top":0}],["Nations",{"points":3,"top":0}],["Marvel Dice Masters",{"points":2,"top":0}],["One Night Ultimate Werewolf",{"points":2,"top":0}],["Corto",{"points":1,"top":0}],["Descent 2nd Edition",{"points":1,"top":0}]],"top":[["Coup",{"points":20,"top":2}],["Terra Mystica",{"points":10,"top":1}],["Tokaido",{"points":7,"top":0}],["Om Nom Nom",{"points":7,"top":0}],["1775: Rebellion",{"points":6,"top":0}],["Jamaica",{"points":5,"top":0}],["Sushi Go",{"points":12,"top":0}],["Shadow Hunters",{"points":3,"top":0}],["One Night Ultimate Werewolf",{"points":2,"top":0}],["Corto",{"points":1,"top":0}],["Thunder Alley",{"points":9,"top":0}],["Bang! The Dice Game",{"points":13,"top":0}],["Space Cadet: Dice Duel",{"points":6,"top":0}],["Dungeon Petz",{"points":5,"top":0}],["Liar's Dice",{"points":9,"top":0}],["7 Wonders",{"points":9,"top":0}],["Star Wars: X-Wing Miniatures Game",{"points":8,"top":0}],["Lords of Waterdeep",{"points":7,"top":0}],["Takenoko",{"points":6,"top":0}],["Russian Railroads",{"points":4,"top":0}],["Nations",{"points":3,"top":0}],["Marvel Dice Masters",{"points":2,"top":0}],["Descent 2nd Edition",{"points":1,"top":0}]]}
+{
+  "points": [
+    [
+      "Star Wars: X-Wing Miniatures Game",
+      {
+        "points": 33,
+        "top": 0,
+        "votes": 4,
+        "avg": 8.0
+      }
+    ],
+    [
+      "Sushi Go",
+      {
+        "points": 23,
+        "top": 0,
+        "votes": 4,
+        "avg": 5.0
+      }
+    ],
+    [
+      "Coup",
+      {
+        "points": 20,
+        "top": 2,
+        "votes": 2,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Terra Mystica",
+      {
+        "points": 20,
+        "top": 2,
+        "votes": 2,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Android: Netrunner",
+      {
+        "points": 16,
+        "top": 0,
+        "votes": 2,
+        "avg": 8.0
+      }
+    ],
+    [
+      "Marvel Dice Masters",
+      {
+        "points": 15,
+        "top": 0,
+        "votes": 3,
+        "avg": 5.0
+      }
+    ],
+    [
+      "Thunder Alley",
+      {
+        "points": 15,
+        "top": 0,
+        "votes": 2,
+        "avg": 7.0
+      }
+    ],
+    [
+      "Bang! The Dice Game",
+      {
+        "points": 13,
+        "top": 0,
+        "votes": 2,
+        "avg": 6.0
+      }
+    ],
+    [
+      "Robotech RPG Tactics",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Summoner Wars",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Cards Against Humanity",
+      {
+        "points": 10,
+        "top": 0,
+        "votes": 2,
+        "avg": 5.0
+      }
+    ],
+    [
+      "Warmachine",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Zombicide",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ]
+  ],
+  "top": [
+    [
+      "Coup",
+      {
+        "points": 20,
+        "top": 2,
+        "votes": 2,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Terra Mystica",
+      {
+        "points": 20,
+        "top": 2,
+        "votes": 2,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Zombicide",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Robotech RPG Tactics",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Trains",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "The Resistance",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Summoner Wars",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Warmachine",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ]
+  ],
+  "votes": [
+    [
+      "Sushi Go",
+      {
+        "points": 23,
+        "top": 0,
+        "votes": 4,
+        "avg": 5.0
+      }
+    ],
+    [
+      "Star Wars: X-Wing Miniatures Game",
+      {
+        "points": 33,
+        "top": 0,
+        "votes": 4,
+        "avg": 8.0
+      }
+    ],
+    [
+      "Marvel Dice Masters",
+      {
+        "points": 15,
+        "top": 0,
+        "votes": 3,
+        "avg": 5.0
+      }
+    ],
+    [
+      "Coup",
+      {
+        "points": 20,
+        "top": 2,
+        "votes": 2,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Cards Against Humanity",
+      {
+        "points": 10,
+        "top": 0,
+        "votes": 2,
+        "avg": 5.0
+      }
+    ],
+    [
+      "Android: Netrunner",
+      {
+        "points": 16,
+        "top": 0,
+        "votes": 2,
+        "avg": 8.0
+      }
+    ],
+    [
+      "Bang! The Dice Game",
+      {
+        "points": 13,
+        "top": 0,
+        "votes": 2,
+        "avg": 6.0
+      }
+    ],
+    [
+      "A Study in Emerald",
+      {
+        "points": 6,
+        "top": 0,
+        "votes": 2,
+        "avg": 3.0
+      }
+    ]
+  ],
+  "avg": [
+    [
+      "Star Wars: X-Wing Miniatures Game",
+      {
+        "points": 33,
+        "top": 0,
+        "votes": 4,
+        "avg": 8.0
+      }
+    ],
+    [
+      "Sushi Go",
+      {
+        "points": 23,
+        "top": 0,
+        "votes": 4,
+        "avg": 5.0
+      }
+    ],
+    [
+      "Marvel Dice Masters",
+      {
+        "points": 15,
+        "top": 0,
+        "votes": 3,
+        "avg": 5.0
+      }
+    ]
+  ]
+}
