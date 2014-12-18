@@ -7,6 +7,7 @@ json = file.read
 data = JSON.parse(json)
 
 sums = {}
+games = [];
 
 # Iterate over the file.
 data.each do |username, top10|
@@ -16,6 +17,9 @@ data.each do |username, top10|
     next if game === ""
 
     points = 10 - index
+
+    # Create a list of all games.
+    games.push(game) if !sums.key?(game)
 
     # Create a record for the game if it's the first time seeing it.
     sums[game] = {'points' => 0, 'top' => 0, 'votes' => 0} if !sums.key?(game)
@@ -55,6 +59,8 @@ output['votes'] = output['votes'][0..7]
 sumsMinThreeVotes = sums.select{|key, item| item['votes'] >= 3}
 output['avg'] = sumsMinThreeVotes.sort_by {|game, info| -info['avg']}
 output['avg'] = output['avg'][0..7]
+
+output['games'] = games.sort
 
 # Output the file.
 puts JSON.pretty_generate(output)
