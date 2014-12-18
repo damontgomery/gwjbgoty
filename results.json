@@ -3,10 +3,19 @@
     [
       "Star Wars: X-Wing Miniatures Game",
       {
-        "points": 33,
+        "points": 39,
         "top": 0,
-        "votes": 4,
-        "avg": 8.0
+        "votes": 5,
+        "avg": 7.8
+      }
+    ],
+    [
+      "Coup",
+      {
+        "points": 28,
+        "top": 2,
+        "votes": 3,
+        "avg": 9.333333333333334
       }
     ],
     [
@@ -15,16 +24,7 @@
         "points": 23,
         "top": 0,
         "votes": 4,
-        "avg": 5.0
-      }
-    ],
-    [
-      "Coup",
-      {
-        "points": 20,
-        "top": 2,
-        "votes": 2,
-        "avg": 10.0
+        "avg": 5.75
       }
     ],
     [
@@ -34,6 +34,24 @@
         "top": 2,
         "votes": 2,
         "avg": 10.0
+      }
+    ],
+    [
+      "Sherlock Holmes: Consulting Detective",
+      {
+        "points": 17,
+        "top": 0,
+        "votes": 2,
+        "avg": 8.5
+      }
+    ],
+    [
+      "Trains",
+      {
+        "points": 17,
+        "top": 1,
+        "votes": 2,
+        "avg": 8.5
       }
     ],
     [
@@ -60,7 +78,16 @@
         "points": 15,
         "top": 0,
         "votes": 2,
-        "avg": 7.0
+        "avg": 7.5
+      }
+    ],
+    [
+      "Rampage",
+      {
+        "points": 15,
+        "top": 1,
+        "votes": 2,
+        "avg": 7.5
       }
     ],
     [
@@ -69,99 +96,7 @@
         "points": 13,
         "top": 0,
         "votes": 2,
-        "avg": 6.0
-      }
-    ],
-    [
-      "Robotech RPG Tactics",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Summoner Wars",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Cards Against Humanity",
-      {
-        "points": 10,
-        "top": 0,
-        "votes": 2,
-        "avg": 5.0
-      }
-    ],
-    [
-      "Warmachine",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Zombicide",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
-      }
-    ]
-  ],
-  "top": [
-    [
-      "Coup",
-      {
-        "points": 20,
-        "top": 2,
-        "votes": 2,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Terra Mystica",
-      {
-        "points": 20,
-        "top": 2,
-        "votes": 2,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Zombicide",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Robotech RPG Tactics",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Trains",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
+        "avg": 6.5
       }
     ],
     [
@@ -174,7 +109,72 @@
       }
     ],
     [
-      "Summoner Wars",
+      "Sheriff of Nottingham",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ]
+  ],
+  "top": [
+    [
+      "Coup",
+      {
+        "points": 28,
+        "top": 2,
+        "votes": 3,
+        "avg": 9.333333333333334
+      }
+    ],
+    [
+      "Terra Mystica",
+      {
+        "points": 20,
+        "top": 2,
+        "votes": 2,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Ticket to Ride: Asia",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Trains",
+      {
+        "points": 17,
+        "top": 1,
+        "votes": 2,
+        "avg": 8.5
+      }
+    ],
+    [
+      "Rampage",
+      {
+        "points": 15,
+        "top": 1,
+        "votes": 2,
+        "avg": 7.5
+      }
+    ],
+    [
+      "Sheriff of Nottingham",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Robotech RPG Tactics",
       {
         "points": 10,
         "top": 1,
@@ -194,21 +194,21 @@
   ],
   "votes": [
     [
+      "Star Wars: X-Wing Miniatures Game",
+      {
+        "points": 39,
+        "top": 0,
+        "votes": 5,
+        "avg": 7.8
+      }
+    ],
+    [
       "Sushi Go",
       {
         "points": 23,
         "top": 0,
         "votes": 4,
-        "avg": 5.0
-      }
-    ],
-    [
-      "Star Wars: X-Wing Miniatures Game",
-      {
-        "points": 33,
-        "top": 0,
-        "votes": 4,
-        "avg": 8.0
+        "avg": 5.75
       }
     ],
     [
@@ -223,19 +223,10 @@
     [
       "Coup",
       {
-        "points": 20,
+        "points": 28,
         "top": 2,
-        "votes": 2,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Cards Against Humanity",
-      {
-        "points": 10,
-        "top": 0,
-        "votes": 2,
-        "avg": 5.0
+        "votes": 3,
+        "avg": 9.333333333333334
       }
     ],
     [
@@ -248,15 +239,6 @@
       }
     ],
     [
-      "Bang! The Dice Game",
-      {
-        "points": 13,
-        "top": 0,
-        "votes": 2,
-        "avg": 6.0
-      }
-    ],
-    [
       "A Study in Emerald",
       {
         "points": 6,
@@ -264,16 +246,43 @@
         "votes": 2,
         "avg": 3.0
       }
+    ],
+    [
+      "Trains",
+      {
+        "points": 17,
+        "top": 1,
+        "votes": 2,
+        "avg": 8.5
+      }
+    ],
+    [
+      "Rampage",
+      {
+        "points": 15,
+        "top": 1,
+        "votes": 2,
+        "avg": 7.5
+      }
     ]
   ],
   "avg": [
     [
+      "Coup",
+      {
+        "points": 28,
+        "top": 2,
+        "votes": 3,
+        "avg": 9.333333333333334
+      }
+    ],
+    [
       "Star Wars: X-Wing Miniatures Game",
       {
-        "points": 33,
+        "points": 39,
         "top": 0,
-        "votes": 4,
-        "avg": 8.0
+        "votes": 5,
+        "avg": 7.8
       }
     ],
     [
@@ -282,7 +291,7 @@
         "points": 23,
         "top": 0,
         "votes": 4,
-        "avg": 5.0
+        "avg": 5.75
       }
     ],
     [

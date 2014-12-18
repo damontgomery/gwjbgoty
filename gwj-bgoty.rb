@@ -33,8 +33,8 @@ end
 
 # Calculate the average.
 sums.each do |game, info|
-  # Multiply by 1.0 to make it a decimal.
-  info['avg'] = 1.0 * (info['points'] / info['votes'])
+  # make points a float so that the returned value is a float
+  info['avg'] = info['points'].to_f / info['votes']
 end
 
 output = {}
