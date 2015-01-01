@@ -1,6 +1,15 @@
 {
   "points": [
     [
+      "Coup",
+      {
+        "points": 48,
+        "top": 4,
+        "votes": 5,
+        "avg": 9.6
+      }
+    ],
+    [
       "Star Wars: X-Wing Miniatures Game",
       {
         "points": 39,
@@ -10,39 +19,48 @@
       }
     ],
     [
-      "Coup",
-      {
-        "points": 28,
-        "top": 2,
-        "votes": 3,
-        "avg": 9.333333333333334
-      }
-    ],
-    [
       "Sushi Go",
       {
-        "points": 23,
+        "points": 32,
         "top": 0,
-        "votes": 4,
-        "avg": 5.75
-      }
-    ],
-    [
-      "Terra Mystica",
-      {
-        "points": 20,
-        "top": 2,
-        "votes": 2,
-        "avg": 10.0
+        "votes": 5,
+        "avg": 6.4
       }
     ],
     [
       "Sherlock Holmes: Consulting Detective",
       {
-        "points": 17,
+        "points": 30,
         "top": 0,
-        "votes": 2,
-        "avg": 8.5
+        "votes": 4,
+        "avg": 7.5
+      }
+    ],
+    [
+      "7 Wonders",
+      {
+        "points": 27,
+        "top": 0,
+        "votes": 3,
+        "avg": 9.0
+      }
+    ],
+    [
+      "Splendor",
+      {
+        "points": 24,
+        "top": 1,
+        "votes": 3,
+        "avg": 8.0
+      }
+    ],
+    [
+      "Terra Mystica",
+      {
+        "points": 24,
+        "top": 2,
+        "votes": 3,
+        "avg": 8.0
       }
     ],
     [
@@ -98,9 +116,38 @@
         "votes": 2,
         "avg": 6.5
       }
+    ]
+  ],
+  "top": [
+    [
+      "Coup",
+      {
+        "points": 48,
+        "top": 4,
+        "votes": 5,
+        "avg": 9.6
+      }
     ],
     [
-      "The Resistance",
+      "Terra Mystica",
+      {
+        "points": 24,
+        "top": 2,
+        "votes": 3,
+        "avg": 8.0
+      }
+    ],
+    [
+      "Fire in the Lake",
+      {
+        "points": 10,
+        "top": 1,
+        "votes": 1,
+        "avg": 10.0
+      }
+    ],
+    [
+      "Pandemic",
       {
         "points": 10,
         "top": 1,
@@ -114,26 +161,6 @@
         "points": 10,
         "top": 1,
         "votes": 1,
-        "avg": 10.0
-      }
-    ]
-  ],
-  "top": [
-    [
-      "Coup",
-      {
-        "points": 28,
-        "top": 2,
-        "votes": 3,
-        "avg": 9.333333333333334
-      }
-    ],
-    [
-      "Terra Mystica",
-      {
-        "points": 20,
-        "top": 2,
-        "votes": 2,
         "avg": 10.0
       }
     ],
@@ -156,34 +183,7 @@
       }
     ],
     [
-      "Rampage",
-      {
-        "points": 15,
-        "top": 1,
-        "votes": 2,
-        "avg": 7.5
-      }
-    ],
-    [
-      "Sheriff of Nottingham",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Robotech RPG Tactics",
-      {
-        "points": 10,
-        "top": 1,
-        "votes": 1,
-        "avg": 10.0
-      }
-    ],
-    [
-      "Warmachine",
+      "Band of Brothers: Ghost Panzer",
       {
         "points": 10,
         "top": 1,
@@ -194,6 +194,24 @@
   ],
   "votes": [
     [
+      "Coup",
+      {
+        "points": 48,
+        "top": 4,
+        "votes": 5,
+        "avg": 9.6
+      }
+    ],
+    [
+      "Sushi Go",
+      {
+        "points": 32,
+        "top": 0,
+        "votes": 5,
+        "avg": 6.4
+      }
+    ],
+    [
       "Star Wars: X-Wing Miniatures Game",
       {
         "points": 39,
@@ -203,12 +221,30 @@
       }
     ],
     [
-      "Sushi Go",
+      "Sherlock Holmes: Consulting Detective",
       {
-        "points": 23,
+        "points": 30,
         "top": 0,
         "votes": 4,
-        "avg": 5.75
+        "avg": 7.5
+      }
+    ],
+    [
+      "7 Wonders",
+      {
+        "points": 27,
+        "top": 0,
+        "votes": 3,
+        "avg": 9.0
+      }
+    ],
+    [
+      "Terra Mystica",
+      {
+        "points": 24,
+        "top": 2,
+        "votes": 3,
+        "avg": 8.0
       }
     ],
     [
@@ -221,48 +257,12 @@
       }
     ],
     [
-      "Coup",
+      "Splendor",
       {
-        "points": 28,
-        "top": 2,
+        "points": 24,
+        "top": 1,
         "votes": 3,
-        "avg": 9.333333333333334
-      }
-    ],
-    [
-      "Android: Netrunner",
-      {
-        "points": 16,
-        "top": 0,
-        "votes": 2,
         "avg": 8.0
-      }
-    ],
-    [
-      "A Study in Emerald",
-      {
-        "points": 6,
-        "top": 0,
-        "votes": 2,
-        "avg": 3.0
-      }
-    ],
-    [
-      "Trains",
-      {
-        "points": 17,
-        "top": 1,
-        "votes": 2,
-        "avg": 8.5
-      }
-    ],
-    [
-      "Rampage",
-      {
-        "points": 15,
-        "top": 1,
-        "votes": 2,
-        "avg": 7.5
       }
     ]
   ],
@@ -270,10 +270,37 @@
     [
       "Coup",
       {
-        "points": 28,
+        "points": 48,
+        "top": 4,
+        "votes": 5,
+        "avg": 9.6
+      }
+    ],
+    [
+      "7 Wonders",
+      {
+        "points": 27,
+        "top": 0,
+        "votes": 3,
+        "avg": 9.0
+      }
+    ],
+    [
+      "Splendor",
+      {
+        "points": 24,
+        "top": 1,
+        "votes": 3,
+        "avg": 8.0
+      }
+    ],
+    [
+      "Terra Mystica",
+      {
+        "points": 24,
         "top": 2,
         "votes": 3,
-        "avg": 9.333333333333334
+        "avg": 8.0
       }
     ],
     [
@@ -286,12 +313,21 @@
       }
     ],
     [
-      "Sushi Go",
+      "Sherlock Holmes: Consulting Detective",
       {
-        "points": 23,
+        "points": 30,
         "top": 0,
         "votes": 4,
-        "avg": 5.75
+        "avg": 7.5
+      }
+    ],
+    [
+      "Sushi Go",
+      {
+        "points": 32,
+        "top": 0,
+        "votes": 5,
+        "avg": 6.4
       }
     ],
     [
@@ -309,9 +345,12 @@
     "7 Wonders",
     "A Study in Emerald",
     "Android: Netrunner",
+    "Arctic Scavengers",
     "Ascension",
+    "Band of Brothers: Ghost Panzer",
     "Bang! The Dice Game",
     "Blokus",
+    "Boss Monster",
     "Cards Against Humanity",
     "Castles of Burgundy",
     "Caverna",
@@ -322,23 +361,36 @@
     "Dead of Winter",
     "Descent 2nd Edition",
     "Dungeon Petz",
+    "Eminent Domain",
+    "Fire in the Lake",
+    "Flash Point: Fire Rescue",
+    "Forbidden Desert",
     "Formula D",
     "Glass Road",
+    "Hanabi",
     "Jamaica",
     "King of New York",
+    "King of Tokyo",
+    "Kolejka",
     "Legendary Encounters",
     "Liar's Dice",
     "Lifeboat",
     "Lords of Waterdeep",
     "Love Letter",
     "Mage Wars",
+    "Marrying Mr. Darcy",
     "Marvel Dice Masters",
     "Mascarade",
+    "Memoir '44",
+    "Men of Iron",
     "Nations",
     "New Amsterdam",
+    "Normandy '44",
     "Om Nom Nom",
     "One Night Ultimate Werewolf",
+    "Pandemic",
     "Patherfinder: Adventure Card Game",
+    "Race! Formula 90",
     "Railways of North America",
     "Rampage",
     "Reluctant Enemies",
@@ -351,6 +403,7 @@
     "Shadowrun: Crossfire",
     "Sheriff of Nottingham",
     "Sherlock Holmes: Consulting Detective",
+    "Shogun",
     "Skull and Roses",
     "Sons of Anarchy",
     "Space Cadet: Dice Duel",
@@ -362,12 +415,15 @@
     "Sushi Go",
     "Takenoko",
     "Terra Mystica",
+    "The Dark Valley",
     "The Resistance",
     "Thunder Alley",
     "Ticket to Ride: Asia",
     "Tokaido",
     "Trains",
+    "Tunisia",
     "Twilight Imperium",
+    "Twilight Struggle",
     "Two Rooms and a Boom",
     "Ultimate Werewolf Inquisition",
     "Village",
