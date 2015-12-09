@@ -2,162 +2,213 @@
 <html>
 <head>
   <title>Game of the year tally</title>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script type="text/javascript">
     'use strict';
     (function ($) {
       $(document).ready(function(){
-        
-        var $rawdata = $('#rawdata');
-        var $results = $('.results');
-        var data;
+
+        var $rawData = $('#rawData');
+        var $outputContainer = $('.results');
+
+        var games = [];
+        var voteSummaryByGame = {};
+        var resultBlockLimit = 13;
 
         $('.calculate').click(function(){
-          // try to read the input.
+          // Try to read the input.
           try {
-            data = $.parseJSON($rawdata.val());
-            var sums = {};
-            var games = [];
+            var votes = $.parseJSON($rawData.val());
+            voteSummaryByGame = {};
+            games = [];
 
-            $.each(data, function(username, top10){
-              $.each(top10, function(index, game){
+            // Create a summary of votes by game and a list of games.
+            $.each(votes, function(username, vote){
+              $.each(vote, function(index, game){
                 if (game === ''){
                   return;
                 }
 
-                var points = 10 - index;
-
-                if (typeof sums[game] === 'undefined') {
+                // Create a record for the game if it doesn't yet exist.
+                if (typeof voteSummaryByGame[game] === 'undefined') {
                   games.push(game);
-                  sums[game] = {'votes' : 0, 'points' : 0, 'top' : 0};
+                  voteSummaryByGame[game] = {'votes' : 0, 'points' : 0, 'top' : 0};
                 }
 
-                sums[game].votes++;
-                sums[game].points += points;
-                
+                // Increment votes.
+                voteSummaryByGame[game].votes++;
+
+                // Calculate and add points.
+                var points = 10 - index;
+                voteSummaryByGame[game].points += points;
+
+                // Increment top votes if this is the first item.
                 if (index === 0) {
-                  sums[game].top++;
+                  voteSummaryByGame[game].top++;
                 }
 
               });
             });
 
-            var output = {};
-            // sort
-            output.points = games.sort(function(a, b){
-              return sums[b].points - sums[a].points;
-            }).slice();
+            // Output the vote summary by game to the console.
+            console.log(voteSummaryByGame);
 
-            output.top = games.sort(function(a, b){
-              return sums[b].top - sums[a].top;
-            }).slice();
-
-            output.votes = games.sort(function(a, b){
-              return sums[b].votes - sums[a].votes;
-            }).slice();
-
-            output.all = games.sort().slice();
-
-            output.games = games;
-
-            console.log(output);
-            console.log(sums);
-
+            // Create results blocks by sorting and displaying results.
             var outputHTML = '';
 
-            outputHTML = '<h2>By Points</h2><table><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th></tr></thead><tbody>';
-            
-            for (var i = 0; i <= 12; i++) {
-              var game = output.points[i];
-              outputHTML += '<tr><td>' + (i + 1) + '</td><td>' + game + '</td><td>' + sums[game].points + '</td><td>' + sums[game].votes + '</td><td>' + sums[game].top + '</td></tr>';
-            }
+            outputHTML += resultsBlock('By Points', 'points');
+            outputHTML += resultsBlock('By Votes', 'votes');
+            outputHTML += resultsBlock('By #1 Votes', 'top');
+            outputHTML += resultsBlock('All Games Alphabetical', 'all');
 
-            outputHTML += '</tbody></table>';
-
-            outputHTML += '<h2>By Votes</h2><table><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th></tr></thead><tbody>';
-            
-            for (var i = 0; i <= 12; i++) {
-              var game = output.votes[i];
-              outputHTML += '<tr><td>' + (i + 1) + '</td><td>' + game + '</td><td>' + sums[game].points + '</td><td>' + sums[game].votes + '</td><td>' + sums[game].top + '</td></tr>';
-            }
-
-            outputHTML += '</tbody></table>';
-
-            outputHTML += '<h2>By #1 Votes</h2><table><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th></tr></thead><tbody>';
-            
-            for (var i = 0; i <= 12; i++) {
-              var game = output.top[i];
-              outputHTML += '<tr><td>' + (i + 1) + '</td><td>' + game + '</td><td>' + sums[game].points + '</td><td>' + sums[game].votes + '</td><td>' + sums[game].top + '</td></tr>';
-            }
-
-            outputHTML += '</tbody></table>';
-
-            outputHTML += '<h2>All Games Alphabetical</h2><table><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th></tr></thead><tbody>';
-            
-            $.each(output.all, function(i, game){
-              outputHTML += '<tr><td>' + (i + 1) + '</td><td>' + game + '</td><td>' + sums[game].points + '</td><td>' + sums[game].votes + '</td><td>' + sums[game].top + '</td></tr>';
-            });
-
-            outputHTML += '</tbody></table>';
-
-            $results.html(outputHTML);
+            $outputContainer.html(outputHTML);
           }
           catch(error) {
             console.log(error.message);
-            $results.html('Your JSON could not be read.');
+            $outputContainer.html('Your JSON could not be read.');
           }
         });
+
+        // Generate a results block of HTML.
+        var resultsBlock = function(title, property){
+          // Sort the results by a property.
+          var results = [];
+
+          if (property === 'all') {
+            results = games.sort().slice();
+          }
+          else {
+            results = games.sort(function(a, b){
+              return voteSummaryByGame[b][property] - voteSummaryByGame[a][property];
+            }).slice(0, resultBlockLimit);
+          }
+
+          // Create the table markup.
+          var outputHTML = '<div class="resultsGroup"><h3>' + title + '</h3><table><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th></tr></thead><tbody>';
+
+          $.each(results, function(i, game){
+            var voteSummary = voteSummaryByGame[game];
+            outputHTML += '<tr><td>' + (i + 1) + '</td><td>' + game + '</td><td>' + voteSummary.points + '</td><td>' + voteSummary.votes + '</td><td>' + voteSummary.top + '</td></tr>';
+          });
+
+          outputHTML += '</tbody></table></div>';
+
+          return outputHTML;
+        };
       });
     })(jQuery);
   </script>
 
   <style>
     body {
-      font-family: verdana, sans-serif;
+      font-family: 'Open Sans', sans-serif;
+      padding: 1em;
     }
 
-    textarea {
-      width: 90%;
-      padding: 1em;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Merriweather', serif;
+    }
+
+    h1 {
+      font-size: 1.62em;
+    }
+
+    h2 {
+      font-size: 1.38em;
     }
 
     .results {
-      padding: 1em;
-      width: 90%;
-      border: 1px solid black;
-      min-height: 100px;
+      /*padding: 1em;*/*/
+      /*width: 90%;*/
+      /*border: 1px solid black;*/
+      /*min-height: 100px;*/
     }
 
     button {
       display: block;
+      font-size: 1.3em;
+      background: #2196F3;
+      color: white;
+      border-width: 0;
+      border-radius: 2px;
+      cursor: pointer;
+      padding: 0.5em 1em;
+    }
+
+    .resultsGroup {
+      display: block;
+      float: left;
+      max-width: 50%;
+      box-sizing: border-box;
+      margin: 1.5em;
     }
 
     table {
-        border: 1px solid gray;
+        border: 0px solid gray;
         border-collapse: collapse;
+        border-radius: 2px;
     }
 
     td, th {
-        border: 1px solid gray;
-        padding: 0.5em;
+      padding: 0.5em;
+      border-width: 0px 0;
+      border-color: gray;
+      border-style: solid;
+    }
+
+    th,
+    tr:nth-child(even) {
+      background: rgba(33, 150, 243, 0.2);
+    }
+
+    code, textarea {
+      font-family: 'Droid Sans Mono', monospace;
+    }
+
+    pre, textarea {
+      white-space: pre-wrap;
+      padding: 1em;
+      background: #EEE;
+      border-radius: 2px;
+      margin: 1em;
+      width: 87%;
+      line-height: 1.6em;
+      font: 10pt monospace;
+      border-width: 0;
+    }
+
+    textarea {
+      background: rgba(33, 150, 243, 0.2);
+    }
+
+    .credits {
+      clear: both;
     }
 
   </style>
 </head>
 <body>
-  <h1>Paste in your data here in JSON format:</h1>
+  <h1>Community Game of the Year Summary Calculator</h1>
+  <textarea name="rawData" id="rawData" cols="30" rows="10" placeholder="Enter Data Here in JSON"></textarea>
   <h2>Example</h2>
-  <pre><code>
-{
-"PandaEskimo" : ["Coup", "Liar's Dice", "Bang! The Dice Game", "Om Nom Nom", "1775: Rebellion", "Jamaica", "Sushi Go", "Shadow Hunters", "One Night Ultimate Werewolf", "Corto"],
-"trichy" : ["Sheriff of Nottingham", "Sherlock Holmes: Consulting Detective", "Lifeboat", "Sekigahara", "Two Rooms and a Boom", "New Amsterdam", "Liar's Dice", "", "", ""]
-}
-  </code></pre> 
-  <textarea name="rawdata" id="rawdata" cols="30" rows="10"></textarea>
+  <pre><code>{
+"PandaEskimo" : ["Descent: Journeys in the Dark Second Edition","Abyss","Welcome to the Dungeon","Tales & Games: The Hare and the Tortoise","Shadow Throne","Blood Rage","Mission Red Planet","Thebes: The Tomb Raiders","Rattus: Mercatus","DC Dice Masters"],
+"carrotpanic" : ["Chaos in the Old World", "Istanbul", "7 Wonders Duel", "Pandemic Legacy", "Keyflower", "Red 7", "Lords of Vegas", "Mysterium", "Five Tribes", "Codenames"],
+"stingray" : ["Mice and Mystics", "Takenoko", "Spyfall", "Werewolf", "Lost Legacy", "Sherlock Holmes Consulting Detective", "Concept", "Loopin' Chewie", "Witness", "Volt Robot Battle Arena"],
+"Bruce" : ["Codenames", "Auf Teuffel Komme Raus", "Splendor", "Mysterium", "Roll for the Galaxy", "Castles of Mad King Ludwig", "Lanterns", "Orleans", "Spyfall", "Elysium"]
+}</code></pre>
+
   <button class="calculate">Calculate Results</button>
   <h2>Results</h2>
-  <div class="results">
-    
+  <div class="results"></div>
+  <div class="credits">
+    <p>
+      By PandaEskimo.
+    </p>
+    <p>
+      See <a href="https://github.com/damontgomery/gwjbgoty">https://github.com/damontgomery/gwjbgoty</a> for Ruby version and project page.
+    </p>
   </div>
 </body>
 </html>
