@@ -118,13 +118,6 @@
       font-size: 1.38em;
     }
 
-    .results {
-      /*padding: 1em;*/*/
-      /*width: 90%;*/
-      /*border: 1px solid black;*/
-      /*min-height: 100px;*/
-    }
-
     button {
       display: block;
       font-size: 1.3em;
@@ -134,6 +127,8 @@
       border-radius: 2px;
       cursor: pointer;
       padding: 0.5em 1em;
+      margin-left: 0.62em;
+      clear: left;
     }
 
     .resultsGroup {
@@ -162,24 +157,48 @@
       background: rgba(33, 150, 243, 0.2);
     }
 
-    code, textarea {
-      font-family: 'Droid Sans Mono', monospace;
+    textarea,
+    .example-wrapper {
+      width: 45%;
+      box-sizing: border-box;
+      float: left;
+      display: block;
+      margin: 1em;
+      padding: 1em;
+      position: relative;
+      height: 30em;
+      background: #EEE;
+      border-width: 0;
+      border-radius: 2px;
+      line-height: 1.6em;
+      font: 10pt monospace;
     }
 
     pre, textarea {
       white-space: pre-wrap;
-      padding: 1em;
-      background: #EEE;
-      border-radius: 2px;
-      margin: 1em;
-      width: 87%;
-      line-height: 1.6em;
-      font: 10pt monospace;
-      border-width: 0;
+    }
+
+    code, textarea {
+      font-family: 'Droid Sans Mono', monospace;
     }
 
     textarea {
+      /*height: 30em;*/
+      margin-bottom: 3em; /* For the button. Not great CSS :(. */
       background: rgba(33, 150, 243, 0.2);
+    }
+
+    h2.example {
+      padding: 0.3em 1em;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 0;
+      background: rgba(255,255,255,1);
+      font-size: 1.38em;
+      font-family: open sans;
+      color: #aaa;
+      border-radius: 0 0 0 2px;
     }
 
     .credits {
@@ -191,13 +210,15 @@
 <body>
   <h1>Community Game of the Year Summary Calculator</h1>
   <textarea name="rawData" id="rawData" cols="30" rows="10" placeholder="Enter Data Here in JSON"></textarea>
-  <h2>Example</h2>
-  <pre><code>{
+  <div class="example-wrapper">
+    <h2 class="example">Example</h2>
+    <pre><code>{
 "PandaEskimo" : ["Descent: Journeys in the Dark Second Edition","Abyss","Welcome to the Dungeon","Tales & Games: The Hare and the Tortoise","Shadow Throne","Blood Rage","Mission Red Planet","Thebes: The Tomb Raiders","Rattus: Mercatus","DC Dice Masters"],
 "carrotpanic" : ["Chaos in the Old World", "Istanbul", "7 Wonders Duel", "Pandemic Legacy", "Keyflower", "Red 7", "Lords of Vegas", "Mysterium", "Five Tribes", "Codenames"],
 "stingray" : ["Mice and Mystics", "Takenoko", "Spyfall", "Werewolf", "Lost Legacy", "Sherlock Holmes Consulting Detective", "Concept", "Loopin' Chewie", "Witness", "Volt Robot Battle Arena"],
 "Bruce" : ["Codenames", "Auf Teuffel Komme Raus", "Splendor", "Mysterium", "Roll for the Galaxy", "Castles of Mad King Ludwig", "Lanterns", "Orleans", "Spyfall", "Elysium"]
 }</code></pre>
+  </div>
 
   <button class="calculate">Calculate Results</button>
   <h2>Results</h2>
