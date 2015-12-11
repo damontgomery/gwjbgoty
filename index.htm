@@ -51,6 +51,11 @@
               });
             });
 
+            // Calculate Averages
+            $.each(voteSummaryByGame, function(game, voteSummary){
+              voteSummaryByGame[game].average = (voteSummary.points / voteSummary.votes).toFixed(1);
+            });
+
             // Output the vote summary by game to the console.
             console.log(voteSummaryByGame);
 
@@ -60,6 +65,7 @@
             outputHTML += resultsBlock('By Points', 'points');
             outputHTML += resultsBlock('By Votes', 'votes');
             outputHTML += resultsBlock('By #1 Votes', 'top');
+            outputHTML += resultsBlock('By Average', 'average');
             outputHTML += resultsBlock('All Games Alphabetical', 'all');
 
             $outputContainer.html(outputHTML);
@@ -72,24 +78,33 @@
 
         // Generate a results block of HTML.
         var resultsBlock = function(title, property){
-          // Sort the results by a property.
-          var results = [];
+          var results = games;
 
-          if (property === 'all') {
-            results = games.sort().slice();
+          // For the average filter out any games with fewer than 2 votes.
+          if (property === 'average') {
+            results = results.filter(function(game){
+              return (voteSummaryByGame[game].votes >= 3);
+            });
           }
+
+          // For the list of all games, just sort Alphabetically.
+          // This is used primarily to dedup entries.
+          if (property === 'all') {
+            results = results.sort().slice();
+          }
+          // Otherwise, sort by the property.
           else {
-            results = games.sort(function(a, b){
+            results = results.sort(function(a, b){
               return voteSummaryByGame[b][property] - voteSummaryByGame[a][property];
             }).slice(0, resultBlockLimit);
           }
 
           // Create the table markup.
-          var outputHTML = '<div class="resultsGroup"><h3>' + title + '</h3><table><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th></tr></thead><tbody>';
+          var outputHTML = '<div class="resultsGroup"><h3>' + title + '</h3><table><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th><th>Avg</th></tr></thead><tbody>';
 
           $.each(results, function(i, game){
             var voteSummary = voteSummaryByGame[game];
-            outputHTML += '<tr><td>' + (i + 1) + '</td><td>' + game + '</td><td>' + voteSummary.points + '</td><td>' + voteSummary.votes + '</td><td>' + voteSummary.top + '</td></tr>';
+            outputHTML += '<tr><td>' + (i + 1) + '</td><td>' + game + '</td><td>' + voteSummary.points + '</td><td>' + voteSummary.votes + '</td><td>' + voteSummary.top + '</td><td>' + voteSummary.average + '</td></tr>';
           });
 
           outputHTML += '</tbody></table></div>';
@@ -131,12 +146,15 @@
       clear: left;
     }
 
+    .results {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
     .resultsGroup {
       display: block;
-      float: left;
-      max-width: 50%;
-      box-sizing: border-box;
-      margin: 1.5em;
+      flex: 1 1 auto;
+      margin: 0.5em;
     }
 
     table {
