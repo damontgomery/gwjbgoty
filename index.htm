@@ -96,21 +96,32 @@
           else {
             results = results.sort(function(a, b){
               return voteSummaryByGame[b][property] - voteSummaryByGame[a][property];
-            }).slice(0, resultBlockLimit);
+            }).slice();
           }
 
           // Create the table markup.
-          var outputHTML = '<div class="resultsGroup"><h3>' + title + '</h3><table><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th><th>Avg</th></tr></thead><tbody>';
+          var outputHTML = '<div class="resultsGroup"><h3>' + title + '</h3><table class="' + property + '"><thead><tr><th>Place</th><th>Game</th><th>Points</th><th>Votes</th><th>#1 Votes</th><th>Avg</th></tr></thead><tbody>';
 
           $.each(results, function(i, game){
             var voteSummary = voteSummaryByGame[game];
             outputHTML += '<tr><td>' + (i + 1) + '</td><td>' + game + '</td><td>' + voteSummary.points + '</td><td>' + voteSummary.votes + '</td><td>' + voteSummary.top + '</td><td>' + voteSummary.average + '</td></tr>';
           });
 
-          outputHTML += '</tbody></table></div>';
+          outputHTML += '</tbody></table><button class="show-all" data-target-table="' + property + '">Show All Results</button></div>';
 
           return outputHTML;
         };
+
+        // Show All button.
+        $('.results').on('click', '.show-all', function(){
+          var $this = $(this);
+          var property = $this.data('target-table');
+          //var $resultsGroup = $this.parents('.resultsGroup');
+          $('table.' + property).addClass('show-all');
+
+          // Hide the button.
+          $this.hide();
+        });
       });
     })(jQuery);
   </script>
@@ -142,8 +153,17 @@
       border-radius: 2px;
       cursor: pointer;
       padding: 0.5em 1em;
-      margin-left: 0.62em;
+      margin: 0.62em;
       clear: left;
+    }
+
+    .resultsGroup button {
+      margin: 1.5em 0;
+    }
+
+    /*Hide the button for the all table.*/
+    button.show-all[data-target-table=all] {
+      display: none;
     }
 
     .results {
@@ -170,9 +190,21 @@
       border-style: solid;
     }
 
+    /*Add striping to the table.*/
     th,
     tr:nth-child(even) {
       background: rgba(33, 150, 243, 0.2);
+    }
+
+    /*Hide all but the first 10 items.*/
+    tbody tr:nth-child(n+11) {
+      display: none;
+    }
+
+    /*Show all results.*/
+    table.all tr,
+    table.show-all tr {
+      display: table-row;
     }
 
     textarea,
